@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOST SERVICE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #5759E5; /* 60% */
+            color: #333; /* 30% */
+        }
+        header {
+            background-color: #63805C; /* 30% */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            display: inline-block;
+        }
+        img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 100px;
+            height: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* 100% para zonas de contenido */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .service-item {
+            display: inline-block;
+            width: calc(25% - 20px);
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #63805C; /* 30% */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .service-item:hover {
+            background-color: #f5f5f5; /* 60% */
+        }
+        .service-description {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #63805C; /* 30% */
+            border-radius: 10px;
+            background-color: #f5f5f5; /* 60% */
+            transition: all 0.3s ease;
+        }
+        .service-description p {
+            margin: 0;
+        }
+        .service-item.active {
+            background-color: #f5f5f5; /* 60% */
+        }
+        .service-item.active .service-description {
+            display: block;
+        }
+        .service-icon {
+            margin-bottom: 10px;
+        }
+        .service-icon i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo de HOST SERVICE">
+        <h1>HOST SERVICE</h1>
+        <p>Tu socio confiable en servicios de hosting.</p>
+    </header>
+    <div class="container">
+        <div class="service-item" onclick="toggleDescription('dedicados')">
+            <div class="service-icon"><i class="fas fa-server"></i></div>
+            <h3>Servidores Dedicados</h3>
+            <p>Planes de alto rendimiento para un control total.</p>
+            <div id="dedicados-desc" class="service-description">
+                <p>Ofrecemos planes de servidores dedicados de alto rendimiento para aquellos que necesitan un control completo sobre su entorno de alojamiento.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('nube')">
+            <div class="service-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Hospedaje en la Nube</h3>
+            <p>Escalabilidad y flexibilidad para tu proyecto.</p>
+            <div id="nube-desc" class="service-description">
+                <p>Nuestros servicios de hospedaje en la nube proporcionan escalabilidad y flexibilidad para adaptarse a las necesidades cambiantes de tu proyecto.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('dominios')">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <h3>Registro de Dominios</h3>
+            <p>Encuentra y registra el nombre de dominio perfecto.</p>
+            <div id="dominios-desc" class="service-description">
+                <p>Encuentra y registra el nombre de dominio perfecto para tu sitio web con nuestra amplia gama de opciones de registro de dominios.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('copias-seguridad')">
+            <div class="service-icon"><i class="fas fa-hdd"></i></div>
+            <h3>Servicios de Copias de Seguridad</h3>
+            <p>Respaldo seguro de tus datos.</p>
+            <div id="copias-seguridad-desc" class="service-description">
+                <p>Realizamos copias de seguridad periódicas de tus datos para garantizar la seguridad y la integridad de tu información.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('seguridad')">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Servicios de Seguridad</h3>
+            <p>Protección avanzada contra amenazas en línea.</p>
+            <div id="seguridad-desc" class="service-description">
+                <p>Protegemos tu sitio web contra amenazas en línea mediante la implementación de medidas de seguridad avanzadas y la supervisión constante.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('migracion')">
+            <div class="service-icon"><i class="fas fa-exchange-alt"></i></div>
+            <h3>Migración de Sitios Web</h3>
+            <p>Transferencia sin problemas de tu sitio web.</p>
+            <div id="migracion-desc" class="service-description">
+                <p>Facilitamos el proceso de migración de tu sitio web desde otro proveedor de alojamiento para garantizar una transición suave y sin problemas.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('desarrollo-web')">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Servicios de Desarrollo Web</h3>
+            <p>Construcción de presencia en línea atractiva y funcional.</p>
+            <div id="desarrollo-web-desc" class="service-description">
+                <p>Ofrecemos servicios de desarrollo web personalizados para ayudarte a construir una presencia en línea atractiva y funcional para tu negocio.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('soporte-tecnico')">
+            <div class="service-icon"><i class="fas fa-headset"></i></div>
+            <h3>Soporte Técnico</h3>
+            <p>Asistencia las 24 horas del día, los 7 días de la semana.</p>
+            <div id="soporte-tecnico-desc" class="service-description">
+                <p>Nuestro equipo de soporte técnico está disponible las 24 horas del día, los 7 días de la semana, para ayudarte con cualquier problema o consulta que puedas tener.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('compartido')">
+            <div class="service-icon"><i class="fas fa-users"></i></div>
+            <h3>Hospedaje Compartido</h3>
+            <p>Planes económicos para alojar tu sitio web.</p>
+            <div id="compartido-desc" class="service-description">
+                <p>Nuestro hospedaje compartido proporciona una solución rentable y confiable para alojar tu sitio web con recursos compartidos entre varios usuarios.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="toggleDescription('correo-electronico')">
+            <div class="service-icon"><i class="fas fa-envelope"></i></div>
+            <h3>Correo Electrónico Empresarial</h3>
+            <p>Comunicación profesional y segura.</p>
+            <div id="correo-electronico-desc" class="service-description">
+                <p>Obtén direcciones de correo electrónico profesionales y seguras para tu empresa con nuestro servicio de correo electrónico empresarial.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(service) {
+            var description = document.getElementById(service + '-desc');
+            var items = document.querySelectorAll('.service-item');
+            items.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            if (description.style.display === 'block') {
+                description.style.display = 'none';
+            } else {
+                var descriptions = document.querySelectorAll('.service-description');
+                descriptions.forEach(function(item) {
+                    item.style.display = 'none';
+                });
+                description.style.display = 'block';
+                document.querySelector('.service-item.active').classList.remove('active');
+                document.querySelector('.service-item.active .service-description').style.display = 'none';
+                document.querySelector('.service-item.active').classList.remove('active');
+                document.getElementById(service + '-desc').parentElement.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
